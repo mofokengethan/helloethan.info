@@ -17,7 +17,65 @@
     <script defer src="/__/firebase/12.3.00/firebase-performance-compat.js"></script>
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
-    <style media="screen">
+      <!-- Listens on .grid-container .message p; targets .apple-table Address column -->
+      <script>
+          document.addEventListener('DOMContentLoaded', function () {
+              // ---- Structure references:
+              // .grid-container .message p  = clickable address cards
+              // .apple-table                = your data table
+              // Address column              = matched via the header text "Address"
+
+              const table = document.querySelector('.apple-table');
+              if (!table) return;
+
+              const tbody = table.querySelector('tbody');
+              const headerCells = Array.from(table.querySelectorAll('thead th'));
+              const addressColIndex = headerCells.findIndex(th =>
+                  th.textContent.trim().toLowerCase() === 'address'
+              );
+
+              if (addressColIndex === -1) return;
+
+              const rows = Array.from(tbody.querySelectorAll('tr'));
+              const messagePs = document.querySelectorAll('.grid-container .message p');
+
+              // Normalize text to avoid whitespace mismatches
+              const norm = (s) => s.replace(/\s+/g, ' ').trim();
+
+              messagePs.forEach((p) => {
+                  p.addEventListener('click', function () {
+                      const clickedAddress = norm(p.textContent);
+
+                      // Find the <tr> whose Address cell matches the clicked text
+                      let targetRow = null;
+                      for (const tr of rows) {
+                          const td = tr.children[addressColIndex];
+                          if (td && norm(td.textContent) === clickedAddress) {
+                              targetRow = tr;
+                              break;
+                          }
+                      }
+
+                      if (!targetRow) return;
+
+                      // Scroll the row into view (works for page or overflowed container)
+                      targetRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                      // Re-trigger the highlight animation if clicked repeatedly
+                      targetRow.classList.remove('row-highlight');
+                      // Force reflow so the animation can restart
+                      void targetRow.offsetWidth;
+                      targetRow.classList.add('row-highlight');
+
+                      // Clean up the class after the animation
+                      setTimeout(() => targetRow.classList.remove('row-highlight'), 2600);
+                  });
+              });
+          });
+      </script>
+
+
+      <style media="screen">
       body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
 
       .grid-container {
@@ -34,6 +92,16 @@
           display: block;
           text-align: center;
           border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      }
+
+      .table-container {
+          padding: 12px;
+          margin: 12px;
+          background: #ffffff;
+          display: block;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.2);
       }
 
       .message img {
@@ -45,6 +113,22 @@
       .message p {
           font-family: Inter, serif;
           font-weight: 600;
+      }
+
+      .content {
+          font-family: "Courier New", ui-monospace;
+          padding: 12px;
+          margin: 12px;
+          font-weight: 580;
+          background: rgba(255, 255, 255, 0.84);
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      }
+
+      .content, p, a {
+          font-family: "Courier New", ui-monospace;
+          font-weight: 580;
+          text-decoration: none;
       }
 
       #itemHeader {
@@ -92,6 +176,69 @@
           font-weight: 500;
           font-family: Inter, serif;
           margin: 16px;
+          padding-top: 100px;
+      }
+
+      .sectionSubHeader {
+          font-size: 1.8em;
+          font-weight: 500;
+          font-family: Inter, serif;
+          margin: 16px;
+      }
+
+      :root {
+          --separator: rgba(60, 60, 67, 0.29);
+          --row-hover: rgba(0, 0, 0, 0.03);
+      }
+
+      .apple-table {
+          font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, system-ui, sans-serif;
+          font-size: 16px;
+          line-height: 1.45;
+          border-collapse: separate;
+          border-spacing: 0;
+          width: 100%;
+          background: transparent;
+      }
+
+      .apple-table caption {
+          text-align: left;
+          font-weight: 600;
+          padding: 8px 0 12px;
+      }
+
+      .apple-table thead th {
+          text-align: left;
+          font-weight: 600;
+          padding: 12px 16px;
+          border-bottom: 1px solid var(--separator);
+          white-space: nowrap;
+      }
+
+      .apple-table tbody td {
+          padding: 12px 16px;
+          vertical-align: middle;
+          border-bottom: 1px solid var(--separator);
+          font-family: "Courier New", ui-monospace;
+      }
+
+      .apple-table tbody tr:hover {
+          font-weight: 580;
+          background: var(--row-hover);
+      }
+
+      .apple-table :where(th, td):focus {
+          outline: 2px auto -webkit-focus-ring-color;
+          outline-offset: 2px;
+      }
+
+      .row-highlight {
+          animation: rowFlash 2.5s ease-out forwards;
+      }
+
+      @keyframes rowFlash {
+          0%   { background: #D6FFEB; }
+          100% { background: transparent; }
       }
     </style>
   </head>
@@ -123,13 +270,197 @@
   <!--- Dream Houses Section -->
   <h3 class="sectionHeader" id="dreamHouses">Dream Houses</h3>
 
+  <div class="content">
+      <p><b>Notice: </b>Sourced from Zillow [Wed Sep 24, 7:33PM]</p>
+  </div>
+
+  <h2 class="sectionSubHeader">Seattle</h2>
+
+
+  <div class="grid-container">
+      <div class="message">
+          <img src="/images/seattleHouse/1920%204th%20Avenue%20%23PH101,%20Seattle,%20WA%2098101.png"  alt="Album Cover"/>
+          <p>1920 4th Avenue #PH101, Seattle, WA 98101</p>
+      </div>
+      <div class="message">
+          <img src="/images/seattleHouse/111%20W%20Highland%20Drive%20%239E&9W,%20Seattle,%20WA%2098119.png"  alt="Album Cover"/>
+          <p>111 W Highland Drive #9E&9W, Seattle, WA 98119</p>
+      </div>
+      <div class="message">
+          <img src="/images/seattleHouse/111%20W%20Highland%20Dr%20UNIT%209E-9W-1C,%20Seattle,%20WA%2098119.png"  alt="Album Cover"/>
+          <p>111 W Highland Dr UNIT 9E-9W-1C, Seattle, WA 98119</p>
+      </div>
+      <div class="message">
+          <img src="/images/seattleHouse/1920%204th%20Avenue%20%233002,%20Seattle,%20WA%2098101.png"  alt="Album Cover"/>
+          <p>1920 4th Avenue #3002, Seattle, WA 98101</p>
+      </div>
+      <div class="message">
+          <img src="/images/seattleHouse/2510%206th%20Avenue%20%233506,%20Seattle,%20WA%2098121.png"  alt="Album Cover"/>
+          <p>2510 6th Avenue #3506, Seattle, WA 98121</p>
+      </div>
+      <div class="message">
+          <img src="/images/seattleHouse/1301%20Spring%20Street%20%23PH32,%20Seattle,%20WA%2098104.png"  alt="Album Cover"/>
+          <p>1301 Spring Street #PH32, Seattle, WA 98104</p>
+      </div>
+  </div>
+
+
+      <div class="table-container">
+      <!--- Houses Tables -->
+      <div class="header-scroll">
+          <table class="apple-table" role="table">
+              <thead>
+              <!--- Column Names -->
+              <tr>
+                  <th scope="col">Price</th>
+                  <th scope="col">Address</th>
+                  <th scope="col">Sqft</th>
+                  <th scope="col">Stories / Levels</th>
+                  <th scope="col">Beds</th>
+                  <th scope="col">Baths</th>
+                  <th scope="col">HOA</th>
+                  <th scope="col">$/Sqft</th>
+                  <th scope="col">Parking spaces</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                  <!--- Price -->
+                  <td>$8,750,000</td>
+                  <!--- Address -->
+                  <td>1920 4th Avenue #PH101, Seattle, WA 98101</td>
+                  <!--- Sqft -->
+                  <td>5,170 sqft</td>
+                  <!--- Stories / Levels -->
+                  <td>1</td>
+                  <!--- Beds -->
+                  <td>3</td>
+                  <!--- Baths -->
+                  <td>4</td>
+                  <!--- HOA -->
+                  <td>$5,619/mo</td>
+                  <!--- $/Sqft -->
+                  <td>$1,692/sqft</td>
+                  <!--- Parking Spaces -->
+                  <td>4</td>
+              </tr>
+              <tr>
+                  <!--- Price -->
+                  <td>$7,900,000</td>
+                  <!--- Address -->
+                  <td>111 W Highland Drive #9E&9W, Seattle, WA 98119</td>
+                  <!--- Sqft -->
+                  <td>5,360 sqft</td>
+                  <!--- Stories / Levels -->
+                  <td>1</td>
+                  <!--- Beds -->
+                  <td>3</td>
+                  <!--- Baths -->
+                  <td>5</td>
+                  <!--- HOA -->
+                  <td>$6,487/mo</td>
+                  <!--- $/Sqft -->
+                  <td>$1,474/sqft</td>
+                  <!--- Parking Spaces -->
+                  <td>5</td>
+              </tr>
+              <tr>
+                  <!--- Price -->
+                  <td>$7,900,000</td>
+                  <!--- Address -->
+                  <td>111 W Highland Dr UNIT 9E-9W-1C, Seattle, WA 98119</td>
+                  <!--- Sqft -->
+                  <td>5,600 sqft</td>
+                  <!--- Stories / Levels -->
+                  <td>1</td>
+                  <!--- Beds -->
+                  <td>3</td>
+                  <!--- Baths -->
+                  <td>5</td>
+                  <!--- HOA -->
+                  <td>$6,487/mo</td>
+                  <!--- $/Sqft -->
+                  <td>$1,411/sqft</td>
+                  <!--- Parking Spaces -->
+                  <td>5</td>
+              </tr>
+              <tr>
+                  <!--- Price -->
+                  <td>$6,995,000</td>
+                  <!--- Address -->
+                  <td>1920 4th Avenue #3002, Seattle, WA 98101</td>
+                  <!--- Sqft -->
+                  <td>4,522 sqft</td>
+                  <!--- Stories / Levels -->
+                  <td>1</td>
+                  <!--- Beds -->
+                  <td>3</td>
+                  <!--- Baths -->
+                  <td>5</td>
+                  <!--- HOA -->
+                  <td>$4,813/mo</td>
+                  <!--- $/Sqft -->
+                  <td>$1,547/sqft</td>
+                  <!--- Parking Spaces -->
+                  <td>4</td>
+              </tr>
+              <tr>
+                  <!--- Price -->
+                  <td>$3,900,000</td>
+                  <!--- Address -->
+                  <td>2510 6th Avenue #3506, Seattle, WA 98121</td>
+                  <!--- Sqft -->
+                  <td>2,616 sqft</td>
+                  <!--- Stories / Levels -->
+                  <td>1</td>
+                  <!--- Beds -->
+                  <td>3</td>
+                  <!--- Baths -->
+                  <td>4</td>
+                  <!--- HOA -->
+                  <td>$2,771/mo</td>
+                  <!--- $/Sqft -->
+                  <td>$1,491/sqft</td>
+                  <!--- Parking Spaces -->
+                  <td>4</td>
+              </tr>
+              <tr>
+                  <!--- Price -->
+                  <td>$8,600,000</td>
+                  <!--- Address -->
+                  <td>1301 Spring Street #PH32, Seattle, WA 98104</td>
+                  <!--- Sqft -->
+                  <td>6,918 sqft</td>
+                  <!--- Stories / Levels -->
+                  <td>1</td>
+                  <!--- Beds -->
+                  <td>4</td>
+                  <!--- Baths -->
+                  <td>6</td>
+                  <!--- HOA -->
+                  <td>$10,281/mo</td>
+                  <!--- $/Sqft -->
+                  <td>$1,243/sqft</td>
+                  <!--- Parking Spaces -->
+                  <td>6</td>
+              </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+
+
   <!--- Dream Cars Section -->
   <h3 class="sectionHeader" id="dreamCars">Dream Cars</h3>
 
   <!--- Albums Section -->
   <h3 class="sectionHeader" id="albums">Albums</h3>
-  <div class="grid-container">
 
+  <div class="content">
+      <p><b>Notice: </b>Sourced from Apple Music [Wed Sep 24, 7:33PM]</p>
+  </div>
+
+  <div class="grid-container">
       <div class="message">
           <img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/78/96/f9/7896f956-82f2-e9e1-fee3-97f880a73f6e/894231795527.jpg/632x632bf.webp"  alt="Album Cover"/>
       </div>
