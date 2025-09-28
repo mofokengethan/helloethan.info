@@ -20,14 +20,8 @@
       <!-- Listens on .grid-container .message p; targets .apple-table Address column -->
       <script>
           document.addEventListener('DOMContentLoaded', function () {
-              // ---- Structure references:
-              // .grid-container .message p  = clickable address cards
-              // .apple-table                = your data table
-              // Address column              = matched via the header text "Address"
-
               const table = document.querySelector('.apple-table');
               if (!table) return;
-
               const tbody = table.querySelector('tbody');
               const headerCells = Array.from(table.querySelectorAll('thead th'));
               const addressColIndex = headerCells.findIndex(th =>
@@ -45,8 +39,6 @@
               messagePs.forEach((p) => {
                   p.addEventListener('click', function () {
                       const clickedAddress = norm(p.textContent);
-
-                      // Find the <tr> whose Address cell matches the clicked text
                       let targetRow = null;
                       for (const tr of rows) {
                           const td = tr.children[addressColIndex];
@@ -58,7 +50,7 @@
 
                       if (!targetRow) return;
 
-                      // Scroll the row into view (works for page or overflowed container)
+                      // Scroll the row into view (works for paged or overflowed container)
                       targetRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
                       // Re-trigger the highlight animation if clicked repeatedly
@@ -247,219 +239,527 @@
   <div id="itemHeader">
       <div class="header-scroll">
           <a href="#career">Career</a>
-          <a href="#dreamHouses">Dream Houses</a>
-          <a href="#dreamCars">Dream Cars</a>
-          <a href="#albums">Albums</a>
-          <a href="#books">Books</a>
-          <a href="#youtube">YouTube</a>
-          <a href="#movies">Movies</a>
-          <a href="#series">Series</a>
-          <a href="#shows">Shows</a>
-          <a href="#airlines">Airlines</a>
           <a href="#destinations">Destinations</a>
           <a href="#cuisine">Cuisine</a>
-          <a href="#childhood">Childhood</a>
-          <a href="#hobbies">Hobbies</a>
-          <a href="#sports">Sports</a>
+          <a href="#dreamHouses">Homes</a>
+          <a href="#books">Books</a>
+          <a href="#dreamCars">Cars</a>
+          <a href="#albums">Albums</a>
+          <a href="#youtube">YouTube</a>
       </div>
   </div>
 
   <!--- Career Section -->
   <h3 class="sectionHeader" id="career">Career</h3>
 
-  <!--- Dream Houses Section -->
-  <h3 class="sectionHeader" id="dreamHouses">Dream Houses</h3>
-
   <div class="content">
-      <p><b>Notice: </b>Sourced from Zillow [Wed Sep 24, 7:33PM]</p>
+      <p><b>Notice: </b>Hello, I am currently working as a <a href="https://www.linkedin.com/in/mofokengethan/">Mobile Software Engineer II at Excellus BCBS</a> and I have been developing mobile apps for 3+ years.
+          I enjoy learning about and working with different technologies, such as SwiftUI, Jetpack Compose, Kotlin Multiplatform, Flutter and React Native. I have published 5 iOS apps currently on the app store using all 5
+          technologies. Having Full-Stack Development experience, I developed all 5 applications using both Firebase, Azure, and AWS for backend services. All applications were built using MVVM and have 80%+ unit & ui test coverage.
+      </p>
   </div>
-
-  <h2 class="sectionSubHeader">Seattle</h2>
-
 
   <div class="grid-container">
       <div class="message">
-          <img src="/images/seattleHouse/1920%204th%20Avenue%20%23PH101,%20Seattle,%20WA%2098101.png"  alt="Album Cover"/>
-          <p>1920 4th Avenue #PH101, Seattle, WA 98101</p>
+          <img src="/images/career/blue_beacon_truck_washes_logo.png"  alt="Album Cover"/>
+          <p>High School: Blue Beacon Truck Wash</p>
       </div>
       <div class="message">
-          <img src="/images/seattleHouse/111%20W%20Highland%20Drive%20%239E&9W,%20Seattle,%20WA%2098119.png"  alt="Album Cover"/>
-          <p>111 W Highland Drive #9E&9W, Seattle, WA 98119</p>
+          <img src="/images/career/mor_furniture_logo.png"  alt="Album Cover"/>
+          <p>High School: Mor Furniture</p>
+      </div>
+      <div class="message">
+          <img src="/images/career/us_army_logo.png"  alt="Album Cover"/>
+          <p>June 2016 — May 2018: Religious Affairs Specialist (56M)</p>
+      </div>
+      <div class="message">
+          <img src="/images/career/ctu_logo.png"  alt="Album Cover"/>
+          <p>November 2018 — February 2020: Bachelor of Science in Information Technology (Data Management)</p>
+      </div>
+      <div class="message">
+          <img src="/images/career/university_of_strathclyde_logo.png"  alt="Album Cover"/>
+          <p>September 2021 — September 2022: Master of Science in Software Development</p>
+      </div>
+      <div class="message">
+          <img src="/images/career/excellusbcbs_logo.png"  alt="Album Cover"/>
+          <p>March 2023 — July 2024: Mobile Software Engineer I</p>
+      </div>
+      <div class="message">
+          <img src="/images/career/excellusbcbs_logo.png"  alt="Album Cover"/>
+          <p>July 2024 — Current: Mobile Software Engineer II</p>
+      </div>
+  </div>
+
+  <!--- Destinations Section -->
+  <h3 class="sectionHeader" id="destinations">Destinations</h3>
+
+  <div class="content">
+      <p><b>Notice: </b>Places I have been</p>
+  </div>
+
+  <div class="grid-container">
+      <div class="message">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/4f/54/1c/4f541c42-5ea0-e4e6-b7b8-b5407acad74b/859710956691_cover.jpg/632x632bb.webp"  alt="Album Cover"/>
+      </div>
+  </div>
+
+  <!--- Cuisine Section -->
+  <h3 class="sectionHeader" id="cuisine">Cuisine</h3>
+
+  <div class="content">
+      <p><b>Notice: </b>Types of food I like</p>
+  </div>
+
+  <div class="grid-container">
+      <div class="message">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/4f/54/1c/4f541c42-5ea0-e4e6-b7b8-b5407acad74b/859710956691_cover.jpg/632x632bb.webp"  alt="Album Cover"/>
+      </div>
+  </div>
+
+  <!--- Books Section -->
+  <h3 class="sectionHeader" id="books">Books</h3>
+  <div class="content">
+      <p><b>Notice: </b>Books I enjoyed growing up</p>
+  </div>
+  <div class="grid-container">
+      <div class="message">
+          <img src="/images/books/of-mice-and-men.jpg"  alt="Album Cover"/>
+          <p>Of Mice and Men</p>
+      </div>
+      <div class="message">
+          <img src="/images/books/eragon.jpg"  alt="Album Cover"/>
+          <p>Eragon</p>
+      </div>
+      <div class="message">
+          <img src="/images/books/on-the-shortness-of-life.jpg"  alt="Album Cover"/>
+          <p>On The Shortness Of Life</p>
+      </div>
+      <div class="message">
+          <img src="/images/books/sea-of-monsters.jpg"  alt="Album Cover"/>
+          <p>Percy Jackson and the Olympians: Sea of Monsters</p>
+      </div>
+      <div class="message">
+          <img src="/images/books/the-great-gatsby.jpg"  alt="Album Cover"/>
+          <p>The Great Gatsby</p>
+      </div>
+      <div class="message">
+          <img src="/images/books/the-last-olympian.jpg"  alt="Album Cover"/>
+          <p>Percy Jackson and the Olympians: The Last Olympian</p>
+      </div>
+      <div class="message">
+          <img src="/images/books/the-lightning-thief.jpg"  alt="Album Cover"/>
+          <p>Percy Jackson and the Olympians: The Lightning Thief</p>
+      </div>
+      <div class="message">
+          <img src="/images/books/the-lost-hero.jpg"  alt="Album Cover"/>
+          <p>The Heroes of Olympus: The Lost Hero</p>
+      </div>
+      <div class="message">
+          <img src="/images/books/the-merchant-of-death.jpg"  alt="Album Cover"/>
+          <p>Pendragon: The Merchant of Death</p>
+      </div>
+      <div class="message">
+          <img src="/images/books/the-son-of-neptune.jpg"  alt="Album Cover"/>
+          <p>The Heroes of Olympus: The Son of Neptune</p>
+      </div>
+      <div class="message">
+          <img src="/images/books/the-titans-curse.jpg"  alt="Album Cover"/>
+          <p>Percy Jackson and the Olympians: The Titan's Curse</p>
+      </div>
+  </div>
+
+  <!--- Movies & TV Shows Section -->
+  <h3 class="sectionHeader" id="movies">Movies & TV Shows</h3>
+  <div class="content">
+      <p><b>Notice: </b>What I enjoy watching</p>
+  </div>
+  <div class="grid-container">
+      <div class="message">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/4f/54/1c/4f541c42-5ea0-e4e6-b7b8-b5407acad74b/859710956691_cover.jpg/632x632bb.webp"  alt="Album Cover"/>
+      </div>
+  </div>
+
+  <!--- Homes Section -->
+  <h3 class="sectionHeader" id="dreamHouses">Homes</h3>
+  <div class="content">
+      <p><b>Notice: </b>Sourced from Zillow [Fri Sep 26, 6:51PM]</p>
+  </div>
+  <div class="grid-container">
+      <div class="message">
+          <img src="/images/floridaHouse/700%20NE%2026th%20Ter%20%23PENTHOUSE%2002,%20Miami,%20FL%2033137_files.jpg"  alt="Album Cover"/>
+          <p>700 NE 26th Ter #PENTHOUSE 02, Miami, FL 33137</p>
+      </div>
+      <div class="message">
+          <img src="/images/floridaHouse/851%20NE%201st%20Ave%20%23PENTHOUSE%205411,%20Miami,%20FL%2033132.webp"  alt="Album Cover"/>
+          <p>851 NE 1st Ave #PENTHOUSE 5411, Miami, FL 33132</p>
+      </div>
+      <div class="message">
+          <img src="/images/bostonHouse/1%20Franklin%20St%20%23PENTHOUSE%203E,%20Boston,%20MA%2002110.webp"  alt="Album Cover"/>
+          <p>1 Franklin St #PENTHOUSE 3E, Boston, MA 02110</p>
+      </div>
+      <div class="message">
+          <img src="/images/nyHouse/28%20E%2070th%20St%20%23PENTHOUSE%201,%20New%20York,%20NY%2010021.webp"  alt="Album Cover"/>
+          <p>28 E 70th St #PENTHOUSE 1, New York, NY 10021</p>
+      </div>
+      <div class="message">
+          <img src="/images/portlandHouse/1001%20NW%20Lovejoy%20St%20%23PENTHOUSE%203,%20Portland,%20OR%2097209.webp"  alt="Album Cover"/>
+          <p>1001 NW Lovejoy St #PENTHOUSE 3, Portland, OR 97209</p>
+      </div>
+      <div class="message">
+          <img src="/images/nyHouse/40%20E%20End%20Ave%20%23PENTHOUSE%2017,%20New%20York,%20NY%2010028.webp"  alt="Album Cover"/>
+          <p>40 E End Ave #PENTHOUSE 17, New York, NY 10028</p>
+      </div>
+      <div class="message">
+          <img src="/images/caHouse/462%20S%20Maple%20Dr%20%23PENTHOUSE%20104,%20Beverly%20Hills,%20CA%2090212.webp"  alt="Album Cover"/>
+          <p>462 S Maple Dr #PENTHOUSE 104, Beverly Hills, CA 90212</p>
+      </div>
+      <div class="message">
+          <img src="/images/nyHouse/77%20Greenwich%20St%20%23PENTHOUSE,%20New%20York,%20NY%2010006.webp"  alt="Album Cover"/>
+          <p>77 Greenwich St #PENTHOUSE, New York, NY 10006</p>
+      </div>
+      <div class="message">
+          <img src="/images/chicagoHouse/159%20E%20Walton%20Pl%20%23PENTHOUSE,%20Chicago,%20IL%2060611.webp"  alt="Album Cover"/>
+          <p>159 E Walton Pl #PENTHOUSE, Chicago, IL 60611</p>
+      </div>
+      <div class="message">
+          <img src="/images/nyHouse/104%20W%2070th%20St%20%23PENTHOUSE,%20New%20York,%20NY%2010023.webp"  alt="Album Cover"/>
+          <p>104 W 70th St #PENTHOUSE, New York, NY 10023</p>
+      </div>
+      <div class="message">
+          <img src="/images/bostonHouse/1%20Franklin%20St%20%23PENTHOUSE%204E,%20Boston,%20MA%2002110.webp"  alt="Album Cover"/>
+          <p>1 Franklin St #PENTHOUSE 4E, Boston, MA 02110</p>
+      </div>
+      <div class="message">
+          <img src="/images/nyHouse/140%20W%2081st%20St%20%23PENTHOUSE,%20New%20York,%20NY%2010024.webp"  alt="Album Cover"/>
+          <p>140 W 81st St #PENTHOUSE, New York, NY 10024</p>
+      </div>
+      <div class="message">
+          <img src="/images/saltLakeCityHouse/44%20W%20Broadway%20%232701,%20Salt%20Lake%20City,%20UT%2084101.webp"  alt="Album Cover"/>
+          <p>44 W Broadway #2701, Salt Lake City, UT 84101</p>
+      </div>
+      <div class="message">
+          <img src="/images/nyHouse/428%20W%2019th%20St%20%23PENTHOUSE,%20New%20York,%20NY%2010011.webp"  alt="Album Cover"/>
+          <p>428 W 19th St #PENTHOUSE, New York, NY 10011</p>
+      </div>
+      <div class="message">
+          <img src="/images/denverHouse/1133%2014th%20Street%20%233320,%20Denver,%20CO%2080202%20.webp"  alt="Album Cover"/>
+          <p>1133 14th Street #3320, Denver, CO 80202 </p>
       </div>
       <div class="message">
           <img src="/images/seattleHouse/111%20W%20Highland%20Dr%20UNIT%209E-9W-1C,%20Seattle,%20WA%2098119.png"  alt="Album Cover"/>
           <p>111 W Highland Dr UNIT 9E-9W-1C, Seattle, WA 98119</p>
       </div>
       <div class="message">
+          <img src="/images/caHouse/765%20Market%20St%20%23PENTHOUSE%203A,%20San%20Francisco,%20CA%2094103.webp"  alt="Album Cover"/>
+          <p>765 Market St #PENTHOUSE 3A, San Francisco, CA 94103</p>
+      </div>
+      <div class="message">
+          <img src="/images/seattleHouse/111%20W%20Highland%20Drive%20%239E&9W,%20Seattle,%20WA%2098119.png"  alt="Album Cover"/>
+          <p>111 W Highland Drive #9E&9W, Seattle, WA 98119</p>
+      </div>
+      <div class="message">
+          <img src="/images/chicagoHouse/189%20E%20Lake%20Shore%20Dr%20%23PENTHOUSE%2018,%20Chicago,%20IL%2060611.webp"  alt="Album Cover"/>
+          <p>189 E Lake Shore Dr #PENTHOUSE 18, Chicago, IL 60611</p>
+      </div>
+      <div class="message">
+          <img src="/images/seattleHouse/1301%20Spring%20Street%20%23PH32,%20Seattle,%20WA%2098104.png"  alt="Album Cover"/>
+          <p>1301 Spring Street #PH32, Seattle, WA 98104</p>
+      </div>
+      <div class="message">
+          <img src="/images/bostonHouse/2%20Avery%20St%20%23PENTHOUSE%203C,%20Boston,%20MA%2002111.webp"  alt="Album Cover"/>
+          <p>2 Avery St #PENTHOUSE 3C, Boston, MA 02111</p>
+      </div>
+      <div class="message">
           <img src="/images/seattleHouse/1920%204th%20Avenue%20%233002,%20Seattle,%20WA%2098101.png"  alt="Album Cover"/>
           <p>1920 4th Avenue #3002, Seattle, WA 98101</p>
+      </div>
+      <div class="message">
+          <img src="/images/denverHouse/1133%2014th%20Street%20%233700,%20Denver,%20CO%2080202.webp"  alt="Album Cover"/>
+          <p>1133 14th Street #3700, Denver, CO 80202</p>
+      </div>
+      <div class="message">
+          <img src="/images/seattleHouse/1920%204th%20Avenue%20%23PH101,%20Seattle,%20WA%2098101.png"  alt="Album Cover"/>
+          <p>1920 4th Avenue #PH101, Seattle, WA 98101</p>
+      </div>
+      <div class="message">
+          <img src="/images/caHouse/865%20Comstock%20Ave%20%23PENTHOUSE%20D,%20Los%20Angeles,%20CA%2090024.webp"  alt="Album Cover"/>
+          <p>865 Comstock Ave #PENTHOUSE D, Los Angeles, CA 90024</p>
       </div>
       <div class="message">
           <img src="/images/seattleHouse/2510%206th%20Avenue%20%233506,%20Seattle,%20WA%2098121.png"  alt="Album Cover"/>
           <p>2510 6th Avenue #3506, Seattle, WA 98121</p>
       </div>
       <div class="message">
-          <img src="/images/seattleHouse/1301%20Spring%20Street%20%23PH32,%20Seattle,%20WA%2098104.png"  alt="Album Cover"/>
-          <p>1301 Spring Street #PH32, Seattle, WA 98104</p>
+          <img src="/images/chicagoHouse/451%20E%20Grand%20Ave%20%23PENTHOUSE%2066,%20Chicago,%20IL%2060611.webp"  alt="Album Cover"/>
+          <p>451 E Grand Ave #PENTHOUSE 66, Chicago, IL 60611</p>
+      </div>
+      <div class="message">
+          <img src="/images/texasHouse/102%20Asbury%20St%20%233501,%20Houston,%20TX%2077007.webp"  alt="Album Cover"/>
+          <p>102 Asbury St #3501, Houston, TX 77007</p>
+      </div>
+      <div class="message">
+          <img src="/images/saltLakeCityHouse/560%20E%20South%20Temple%20S%20%23704,%20Salt%20Lake%20City,%20UT%2084102.webp"  alt="Album Cover"/>
+          <p>560 E South Temple S #704, Salt Lake City, UT 84102</p>
+      </div>
+      <div class="message">
+          <img src="/images/texasHouse/610%20Davis%20St%20%234903,%20Austin,%20TX%2078701.webp"  alt="Album Cover"/>
+          <p>610 Davis St #4903, Austin, TX 78701</p>
+      </div>
+      <div class="message">
+          <img src="/images/bostonHouse/45%20Province%20St%20%23PENTHOUSE%202,%20Boston,%20MA%2002108.webp"  alt="Album Cover"/>
+          <p>45 Province St #PENTHOUSE 2, Boston, MA 02108</p>
+      </div>
+      <div class="message">
+          <img src="/images/texasHouse/1747%20Leonard%20St%20SUITE%201901,%20Dallas,%20TX%2075201.webp"  alt="Album Cover"/>
+          <p>1747 Leonard St SUITE 1901, Dallas, TX 75201</p>
+      </div>
+      <div class="message">
+          <img src="/images/denverHouse/1551%20Larimer%20Street%20%231901,%20Denver,%20CO%2080202.webp"  alt="Album Cover"/>
+          <p>1551 Larimer Street #1901, Denver, CO 80202</p>
+      </div>
+      <div class="message">
+          <img src="/images/texasHouse/2555%20N%20Pearl%20St%20APT%202200,%20Dallas,%20TX%2075201.webp"  alt="Album Cover"/>
+          <p>2555 N Pearl St APT 2200, Dallas, TX 75201</p>
+      </div>
+      <div class="message">
+          <img src="/images/caHouse/3785%20Wilshire%20Blvd%20%23PENTHOUSE%202,%20Los%20Angeles,%20CA%2090010.webp"  alt="Album Cover"/>
+          <p>3785 Wilshire Blvd #PENTHOUSE 2, Los Angeles, CA 90010</p>
+      </div>
+      <div class="message">
+          <img src="/images/texasHouse/3130%20N%20Harwood%20St%20APT%203202,%20Dallas,%20TX%2075201.webp"  alt="Album Cover"/>
+          <p>3130 N Harwood St APT 3202, Dallas, TX 75201</p>
+      </div>
+      <div class="message">
+          <img src="/images/chicagoHouse/453%20W%20Briar%20Pl%20%23PENTHOUSE,%20Chicago,%20IL%2060657.webp"  alt="Album Cover"/>
+          <p>453 W Briar Pl #PENTHOUSE, Chicago, IL 60657</p>
+      </div>
+      <div class="message">
+          <img src="/images/texasHouse/4205%20Buena%20Vista%20St%20%23501,%20Dallas,%20TX%2075205.webp"  alt="Album Cover"/>
+          <p>4205 Buena Vista St #501, Dallas, TX 75205</p>
+      </div>
+      <div class="message">
+          <img src="/images/bostonHouse/274%20Beacon%20St%20%23PENTHOUSE,%20Boston,%20MA%2002116.webp"  alt="Album Cover"/>
+          <p>274 Beacon St #PENTHOUSE, Boston, MA 02116</p>
+      </div>
+      <div class="message">
+          <img src="/images/vancouverHouse/277%20Thurlow%20St%20%232601,%20Vancouver,%20BC%20V6C%200C1.webp"  alt="Album Cover"/>
+          <p>277 Thurlow St #2601, Vancouver, BC V6C 0C1</p>
+      </div>
+      <div class="message">
+          <img src="/images/denverHouse/2001%20Lincoln%20Street%20%232524,%20Denver,%20CO%2080202.webp"  alt="Album Cover"/>
+          <p>2001 Lincoln Street #2524, Denver, CO 80202</p>
+      </div>
+      <div class="message">
+          <img src="/images/vancouverHouse/667%20Howe%20St%20%234601,%20Vancouver,%20BC%20V6C%200B5.webp"  alt="Album Cover"/>
+          <p>667 Howe St #4601, Vancouver, BC V6C 0B5</p>
+      </div>
+      <div class="message">
+          <img src="/images/saltLakeCityHouse/751%20Main%20St%20%23415,%20Park%20City,%20UT%2084060%20.webp"  alt="Album Cover"/>
+          <p>751 Main St #415, Park City, UT 84060 </p>
+      </div>
+      <div class="message">
+          <img src="/images/vancouverHouse/1028%20Barclay%20St%20PENTHOUSE%201,%20Vancouver,%20BC%20V6E%200B1.webp"  alt="Album Cover"/>
+          <p>1028 Barclay St PENTHOUSE 1, Vancouver, BC V6E 0B1</p>
+      </div>
+      <div class="message">
+          <img src="/images/caHouse/10601%20Wilshire%20Blvd%20%23PENTHOUSE%20E,%20Los%20Angeles,%20CA%2090024.webp"  alt="Album Cover"/>
+          <p>10601 Wilshire Blvd #PENTHOUSE E, Los Angeles, CA 90024</p>
+      </div>
+      <div class="message">
+          <img src="/images/vancouverHouse/1139%20Cordova%20St%20W%20%231401,%20Vancouver,%20BC%20V6C%200A2.webp"  alt="Album Cover"/>
+          <p>1139 Cordova St W #1401, Vancouver, BC V6C 0A2</p>
+      </div>
+      <div class="message">
+          <img src="/images/chicagoHouse/800%20N%20Michigan%20Ave%20%23PENTHOUSE%2063,%20Chicago,%20IL%2060611.webp"  alt="Album Cover"/>
+          <p>800 N Michigan Ave #PENTHOUSE 63, Chicago, IL 60611</p>
+      </div>
+      <div class="message">
+          <img src="/images/vancouverHouse/1169%20Cordova%20St%20W%20%232101,%20Vancouver,%20BC%20V6C%203T1.webp"  alt="Album Cover"/>
+          <p>1169 Cordova St W #2101, Vancouver, BC V6C 3T1</p>
+      </div>
+      <div class="message">
+          <img src="/images/bostonHouse/1%20Franklin%20St%20%23PENTHOUSE%204B,%20Boston,%20MA%2002110.webp"  alt="Album Cover"/>
+          <p>1 Franklin St #PENTHOUSE 4B, Boston, MA 02110</p>
+      </div>
+      <div class="message">
+          <img src="/images/vancouverHouse/1221%20Bidwell%20St%20%232101,%20Vancouver,%20BC%20V6G%200B1.webp"  alt="Album Cover"/>
+          <p>1221 Bidwell St #2101, Vancouver, BC V6G 0B1</p>
+      </div>
+      <div class="message">
+          <img src="/images/portlandHouse/3601%20SW%20River%20Pkwy%20SUITE%203101,%20Portland,%20OR%2097239.webp"  alt="Album Cover"/>
+          <p>3601 SW River Pkwy SUITE 3101, Portland, OR 97239</p>
+      </div>
+      <div class="message">
+          <img src="/images/chicagoHouse/900%20W%20Washington%20Blvd%20%23PENTHOUSE%20W,%20Chicago,%20IL%2060607.webp"  alt="Album Cover"/>
+          <p>900 W Washington Blvd #PENTHOUSE W, Chicago, IL 60607</p>
+      </div>
+      <div class="message">
+          <img src="/images/floridaHouse/2000%20S%20Ocean%20Dr%20%23PENTHOUSE%204,%20Hallandale,%20FL%2033009.webp"  alt="Album Cover"/>
+          <p>2000 S Ocean Dr #PENTHOUSE 4, Hallandale, FL 33009</p>
+      </div>
+      <div class="message">
+          <img src="/images/floridaHouse/5000%20Island%20Estates%20Dr%20%23PENTHOUSE%201508,%20North%20Miami%20Beach,%20FL%2033160_files.jpg"  alt="Album Cover"/>
+          <p>5000 Island Estates Dr #PENTHOUSE 1508, North Miami Beach, FL 33160_files</p>
+      </div>
+      <div class="message">
+          <img src="/images/floridaHouse/10141%20E%20Bay%20Harbor%20Dr%20%23PENTHOUSE%203,%20Bay%20Harbor%20Islands,%20FL%2033154.webp"  alt="Album Cover"/>
+          <p>10141 E Bay Harbor Dr #PENTHOUSE 3, Bay Harbor Islands, FL 33154</p>
       </div>
   </div>
 
-
-      <div class="table-container">
-      <!--- Houses Tables -->
-      <div class="header-scroll">
-          <table class="apple-table" role="table">
-              <thead>
-              <!--- Column Names -->
-              <tr>
-                  <th scope="col">Price</th>
-                  <th scope="col">Address</th>
-                  <th scope="col">Sqft</th>
-                  <th scope="col">Stories / Levels</th>
-                  <th scope="col">Beds</th>
-                  <th scope="col">Baths</th>
-                  <th scope="col">HOA</th>
-                  <th scope="col">$/Sqft</th>
-                  <th scope="col">Parking spaces</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                  <!--- Price -->
-                  <td>$8,750,000</td>
-                  <!--- Address -->
-                  <td>1920 4th Avenue #PH101, Seattle, WA 98101</td>
-                  <!--- Sqft -->
-                  <td>5,170 sqft</td>
-                  <!--- Stories / Levels -->
-                  <td>1</td>
-                  <!--- Beds -->
-                  <td>3</td>
-                  <!--- Baths -->
-                  <td>4</td>
-                  <!--- HOA -->
-                  <td>$5,619/mo</td>
-                  <!--- $/Sqft -->
-                  <td>$1,692/sqft</td>
-                  <!--- Parking Spaces -->
-                  <td>4</td>
-              </tr>
-              <tr>
-                  <!--- Price -->
-                  <td>$7,900,000</td>
-                  <!--- Address -->
-                  <td>111 W Highland Drive #9E&9W, Seattle, WA 98119</td>
-                  <!--- Sqft -->
-                  <td>5,360 sqft</td>
-                  <!--- Stories / Levels -->
-                  <td>1</td>
-                  <!--- Beds -->
-                  <td>3</td>
-                  <!--- Baths -->
-                  <td>5</td>
-                  <!--- HOA -->
-                  <td>$6,487/mo</td>
-                  <!--- $/Sqft -->
-                  <td>$1,474/sqft</td>
-                  <!--- Parking Spaces -->
-                  <td>5</td>
-              </tr>
-              <tr>
-                  <!--- Price -->
-                  <td>$7,900,000</td>
-                  <!--- Address -->
-                  <td>111 W Highland Dr UNIT 9E-9W-1C, Seattle, WA 98119</td>
-                  <!--- Sqft -->
-                  <td>5,600 sqft</td>
-                  <!--- Stories / Levels -->
-                  <td>1</td>
-                  <!--- Beds -->
-                  <td>3</td>
-                  <!--- Baths -->
-                  <td>5</td>
-                  <!--- HOA -->
-                  <td>$6,487/mo</td>
-                  <!--- $/Sqft -->
-                  <td>$1,411/sqft</td>
-                  <!--- Parking Spaces -->
-                  <td>5</td>
-              </tr>
-              <tr>
-                  <!--- Price -->
-                  <td>$6,995,000</td>
-                  <!--- Address -->
-                  <td>1920 4th Avenue #3002, Seattle, WA 98101</td>
-                  <!--- Sqft -->
-                  <td>4,522 sqft</td>
-                  <!--- Stories / Levels -->
-                  <td>1</td>
-                  <!--- Beds -->
-                  <td>3</td>
-                  <!--- Baths -->
-                  <td>5</td>
-                  <!--- HOA -->
-                  <td>$4,813/mo</td>
-                  <!--- $/Sqft -->
-                  <td>$1,547/sqft</td>
-                  <!--- Parking Spaces -->
-                  <td>4</td>
-              </tr>
-              <tr>
-                  <!--- Price -->
-                  <td>$3,900,000</td>
-                  <!--- Address -->
-                  <td>2510 6th Avenue #3506, Seattle, WA 98121</td>
-                  <!--- Sqft -->
-                  <td>2,616 sqft</td>
-                  <!--- Stories / Levels -->
-                  <td>1</td>
-                  <!--- Beds -->
-                  <td>3</td>
-                  <!--- Baths -->
-                  <td>4</td>
-                  <!--- HOA -->
-                  <td>$2,771/mo</td>
-                  <!--- $/Sqft -->
-                  <td>$1,491/sqft</td>
-                  <!--- Parking Spaces -->
-                  <td>4</td>
-              </tr>
-              <tr>
-                  <!--- Price -->
-                  <td>$8,600,000</td>
-                  <!--- Address -->
-                  <td>1301 Spring Street #PH32, Seattle, WA 98104</td>
-                  <!--- Sqft -->
-                  <td>6,918 sqft</td>
-                  <!--- Stories / Levels -->
-                  <td>1</td>
-                  <!--- Beds -->
-                  <td>4</td>
-                  <!--- Baths -->
-                  <td>6</td>
-                  <!--- HOA -->
-                  <td>$10,281/mo</td>
-                  <!--- $/Sqft -->
-                  <td>$1,243/sqft</td>
-                  <!--- Parking Spaces -->
-                  <td>6</td>
-              </tr>
-              </tbody>
-          </table>
+  <!--- Cars Section -->
+  <h3 class="sectionHeader" id="dreamCars">Cars</h3>
+  <div class="content">
+      <p><b>Notice: </b>Sourced from Cars And Bids [Sat Sep 27, 3:29PM]</p>
+  </div>
+  <div class="grid-container">
+      <div class="message">
+          <img src="/images/cars/1984%20BMW%20Alpina%20B6%202.8%20Number%203%20of%20261%20Built.jpg"  alt="Album Cover"/>
+          <p>1984 BMW Alpina B6 2.8 Number 3 of 261 Built</p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/2023-bmw-i7-xdrive60.jpg"  alt="Album Cover"/>
+          <p>2023 BMW i7 xDrive</p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/1985%20Porsche%20911%20Turbo%204-Speed%20Manual.jpg"  alt="Album Cover"/>
+          <p>1985 Porsche 911 Turbo 4-Speed Manual</p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/2021-volvo-xc60-recharge-t8-polestar-engineered.jpg"  alt="Album Cover"/>
+          <p>2021 Volvo XC60 Recharge T8 Polestar Engineered</p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/1986%20Porsche%20911%20Carrera%20Targa%205-Speed%20Manual.jpg"  alt="Album Cover"/>
+          <p>1986 Porsche 911 Carrera Targa 5-Speed Manual</p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/2021-mercedes-amg-gle63-s.jpg"  alt="Album Cover"/>
+          <p>2021 Mercedes AMG GLE63 S</p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/1987%20Porsche%20911%20Carrera%20Targa%20G50%205-Speed%20Manual.jpg"  alt="Album Cover"/>
+          <p>1987 Porsche 911 Carrera Targa G50 5-Speed Manual</p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/2021-mercedes-amg-gle63-s-coupe.jpg"  alt="Album Cover"/>
+          <p>2021 Mercedes AMG GLE63 S Coupe</p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/1988%20BMW%20M3,%205-Speed%20Manual.JPG"  alt="Album Cover"/>
+          <p>1988 BMW M3, 5-Speed Manual</p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/2020-bmw-x4-m-competition.jpeg"  alt="Album Cover"/>
+          <p>2020 BMW X4 M Competition</p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/1988%20BMW%20M6,%205-Speed%20Manual.jpg"  alt="Album Cover"/>
+          <p>1988 BMW M6, 5-Speed Manual</p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/2019-mercedes-amg-e63-s-wagon.jpg"  alt="Album Cover"/>
+          <p>2019 Mercedes AMG E63 S Wagon</p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/1988%20BMW%20M6%20Black,%205-Speed%20Manual.jpg" alt="Album Cover"/>  alt="Album Cover"/>
+          <p>1988 BMW M6 Black, 5-Speed Manual</p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/2019-aston-martin-db11-coupe.jpg"  alt="Album Cover"/>
+          <p>2019 Aston Martin DB11</p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/1988%20Porsche%20911%20Turbo%20Coupe,%204-Speed%20Manual.jpg"  alt="Album Cover"/>
+          <p>1988 Porsche 911 Turbo Coupe, 4-Speed Manual</p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/2015-mitsubishi-lancer-evolution-x-final-edition.jpg"  alt="Album Cover"/>
+          <p>2015 Mitsubishi Lancer Evolution X Final Edition</p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/1990%20BMW%20M3,%205-Speed%20Manual.jpg"  alt="Album Cover"/>
+          <p>1990 BMW M3, 5-Speed Manual</p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/1990%20BMW%20325i%20Touring%205-Speed%20Manual.jpg"  alt="Album Cover"/>
+          <p>1990 BMW 325i Touring 5-Speed Manual</p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/1990%20Lotus%20Esprit%20Turbo%20SE.jpg"  alt="Album Cover"/>
+          <p>1990 Lotus Esprit Turbo SE</p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/1991%20Acura%20NSX.jpg"  alt="Album Cover"/>
+          <p>1991 Acura NSX</p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/1993%20Mazda%20RX-7,%20Veilside%20Body%20Kit.jpg"  alt="Album Cover"/>
+          <p>1993 Mazda RX-7, Veilside Body Kit</p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/1994%20Audi%20RS2%20Avant.jpg"  alt="Album Cover"/>
+          <p>1994 Audi RS2 Avant</p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/1994%20BMW%20850CSi.jpg"  alt="Album Cover"/>
+          <p>1994 BMW 850CSi</p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/1995%20BMW%20850CSi.jpeg"  alt="Album Cover"/>
+          <p>1995 BMW 850CSi</p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/1998%20Subaru%20Impreza%20WRX%2022B%20STI%20Coupe.jpg"  alt="Album Cover"/>
+          <p>1998 Subaru Impreza WRX 22B STI Coupe</p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/1999%20Nissan%20Skyline%20GT-R%20Japanese-Market%20R34.jpg"  alt="Album Cover"/>
+          <p>1999 Nissan Skyline GT-R Japanese-Market R34</p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/2000%20BMW%20M5.jpg"  alt="Album Cover"/>
+          <p>2000 BMW M5</p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/2000%20Nissan%20Skyline%20GT-R%20V-Spec%20Japanese-Market%20R34.jpg"  alt="Album Cover"/>
+          <p>2000 Nissan Skyline GT-R V-Spec Japanese-Market R34</p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/"  alt="Album Cover"/>
+          <p></p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/"  alt="Album Cover"/>
+          <p></p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/"  alt="Album Cover"/>
+          <p></p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/"  alt="Album Cover"/>
+          <p></p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/"  alt="Album Cover"/>
+          <p></p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/"  alt="Album Cover"/>
+          <p></p>
+      </div>
+      <div class="message">
+          <img src="/images/cars/"  alt="Album Cover"/>
+          <p></p>
       </div>
   </div>
-
-
-  <!--- Dream Cars Section -->
-  <h3 class="sectionHeader" id="dreamCars">Dream Cars</h3>
 
   <!--- Albums Section -->
   <h3 class="sectionHeader" id="albums">Albums</h3>
-
   <div class="content">
       <p><b>Notice: </b>Sourced from Apple Music [Wed Sep 24, 7:33PM]</p>
   </div>
-
   <div class="grid-container">
       <div class="message">
           <img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/78/96/f9/7896f956-82f2-e9e1-fee3-97f880a73f6e/894231795527.jpg/632x632bf.webp"  alt="Album Cover"/>
@@ -1668,34 +1968,182 @@
 
   </div>
 
-  <!--- Albums Section -->
-  <h3 class="sectionHeader" id="books">Books</h3>
-  <!--- Albums Section -->
+  <!--- YouTube Section -->
   <h3 class="sectionHeader" id="youtube">YouTube</h3>
-  <!--- Albums Section -->
-  <h3 class="sectionHeader" id="movies">Movies</h3>
-  <!--- Albums Section -->
-  <h3 class="sectionHeader" id="series">Series</h3>
-  <!--- Albums Section -->
-  <h3 class="sectionHeader" id="shows">Shows</h3>
+  <div class="content">
+      <p><b>Notice: </b>YouTube Channels I subscribe to</p>
+  </div>
+  <div class="grid-container">
+      <div class="message">
+          <img src="/images/youtube/awanuinz.jpg" alt="Album Cover"/>
+          <p>Awanui NZ</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/1051-the-fan.jpg" alt="Album Cover"/>
+          <p>105.1 The Fan</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/a-life-more-boaty.jpg" alt="Album Cover"/>
+          <p>A Life More Boaty</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/acquired.jpg" alt="Album Cover"/>
+          <p>Acquired</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/amigoscode.jpg" alt="Album Cover"/>
+          <p>Amigoscode</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/apple-developer.jpg" alt="Album Cover"/>
+          <p>Apple Developer</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/aquaholic.jpg" alt="Album Cover"/>
+          <p>Aquaholic</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/boat-life.jpg" alt="Album Cover"/>
+          <p>Boat Life</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/dalton+michael.jpg" alt="Album Cover"/>
+          <p>Dalton Michael</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/diggnaiton.jpg" alt="Album Cover"/>
+          <p>Diggnation</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/dimitri-bianco.jpg" alt="Album Cover"/>
+          <p>Dimitri Bianco</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/droidcon-boston.jpg" alt="Album Cover"/>
+          <p>Droidcon Boston</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/droidcon-italy.jpg" alt="Album Cover"/>
+          <p>Droidcon Italy</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/droidcon-krakow.jpg" alt="Album Cover"/>
+          <p>Droidcon Krakow</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/droidcon-montreal.jpg" alt="Album Cover"/>
+          <p>Droidcon Montreal</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/droidcon-nyc.jpg" alt="Album Cover"/>
+          <p>Droidcon NYC</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/droidcon-sf.jpg" alt="Album Cover"/>
+          <p>Droidcon SF</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/droidcon-spain.jpg" alt="Album Cover"/>
+          <p>Droidcon Spain</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/droidcon-toronto.jpg" alt="Album Cover"/>
+          <p>Droidcon Toronto</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/essential-developer.jpg" alt="Album Cover"/>
+          <p>Essential Developer</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/freecodecamp.jpg" alt="Album Cover"/>
+          <p>freeCodeCamp</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/iOS-Academy.jpg" alt="Album Cover"/>
+          <p>iOS Academy</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/karin-prater.jpg" alt="Album Cover"/>
+          <p>Karin Prater</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/kotlin-by-jetbrains.jpg" alt="Album Cover"/>
+          <p>Kotlin by JetBrains</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/mac-break-weekly.jpg" alt="Album Cover"/>
+          <p>MacBreak Weekly</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/motor-boat-and-yachting.jpg" alt="Album Cover"/>
+          <p>Motor Boat & Yachting</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/my-first-million.jpg" alt="Album Cover"/>
+          <p>My First Million</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/nautistyles.jpg" alt="Album Cover"/>
+          <p>NautiStyles</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/not-investment-advice.jpg" alt="Album Cover"/>
+          <p>Not Investment Advice</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/paul-hudson.jpg" alt="Album Cover"/>
+          <p>Paul Hudson</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/sharp-tech-podcast.jpg" alt="Album Cover"/>
+          <p>Sharp Tech Podcast</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/startups-for-the-rest-of-us.jpg" alt="Album Cover"/>
+          <p>Startups For the Rest of Us</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/tech-with-tim.jpg" alt="Album Cover"/>
+          <p>Tech With Tim</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/the-acquirers-podcast.jpg" alt="Album Cover"/>
+          <p>The Acquirers Podcast</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/the-quantified-scientist.jpg"  alt="Album Cover"/>
+          <p>The Quantified Scientist</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/this-week-in-startups.jpg"  alt="Album Cover"/>
+          <p>This Week In Startups</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/this-week-in-tech.jpg"  alt="Album Cover"/>
+          <p>This Week in Tech</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/we-study-billionaires.jpg"  alt="Album Cover"/>
+          <p>We Study Billionaires</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/wvfrm-podcast.jpg"  alt="Album Cover"/>
+          <p>Wave Form Podcast</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/yatch-buyer.jpg"  alt="Album Cover"/>
+          <p>Yacht Buyer</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/yatch-lens.jpg"  alt="Album Cover"/>
+          <p>Yacht Lens</p>
+      </div>
+      <div class="message">
+          <img src="/images/youtube/yatchs-for-sale.jpg"  alt="Album Cover"/>
+          <p>Yachts For Sale</p>
+      </div>
+  </div>
 
-  <!--- Airlines Section -->
-  <h3 class="sectionHeader" id="airlines">Airlines</h3>
-
-  <!--- Destinations Section -->
-  <h3 class="sectionHeader" id="destinations">Destinations</h3>
-
-  <!--- Cuisine Section -->
-  <h3 class="sectionHeader" id="cuisine">Cuisine</h3>
-
-  <!--- Childhood Section -->
-  <h3 class="sectionHeader" id="childhood">Childhood</h3>
-
-  <!--- Hobbies Section -->
-  <h3 class="sectionHeader" id="hobbies">Hobbies</h3>
-
-  <!--- Sports Section -->
-  <h3 class="sectionHeader" id="sports">Sports</h3>
 
 
   </body>
