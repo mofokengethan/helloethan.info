@@ -1,7 +1,7 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import LandingPage from './components/LandingPage.vue'
 </script>
 
 <template>
-  <HelloWorld msg="Ethan Mofokeng" />
+  <LandingPage msg="Ethan Mofokeng" />
 </template>

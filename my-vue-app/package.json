@@ -16,7 +16,7 @@
     "vite": "^7.1.7"
   },
   "hosting": {
-    "public": "my-vue-app/dist",
+    "public": "dist",
     "ignore": [
       "node_modules",
       ".git",
@@ -27,7 +27,7 @@
     "rewrites": [
       {
         "source": "**",
-        "destination": "/index.html"
+        "destination": "index.html"
       }
     ]
   }
