@@ -3,14 +3,17 @@
 </script>
 
 <template>
-  <h4>🤖 Android</h4>
-  <h1><RouterLink to="/" class="btn">Ethan Mofokeng</RouterLink></h1>
+  <div class="small-button-row">
+    <RouterLink to="/" class="btn">🏡 Home</RouterLink>
+    <RouterLink to="" class="btn">💻 Blog</RouterLink>
+  </div>
+  <h1>Blog</h1>
   <div class="button-row">
     <a href="https://www.linkedin.com/in/mofokengethan" class="btn">🤺 LinkedIn</a>
+    <RouterLink to="/android" class="btn">🤖 Android</RouterLink>
     <RouterLink to="/ios" class="btn">🍎 iOS</RouterLink>
     <RouterLink to="/apis" class="btn">🔌 APIs</RouterLink>
     <RouterLink to="/cloud" class="btn">☁️ Cloud</RouterLink>
-    <RouterLink to="/blog" class="btn">💻 Blog</RouterLink>
     <RouterLink to="/reviews" class="btn">🗞️ Reviews</RouterLink>
     <RouterLink to="/research" class="btn">🔭 Research</RouterLink>
     <RouterLink to="/web" class="btn">🕸️ Web</RouterLink>
@@ -39,6 +42,7 @@
 
       <!-- # Main Section -->
       <div class="main">
+        <h4>🤖 Android</h4>
         <article class="hero" aria-label="Featured story">
           <div class="hero-figure" role="img" aria-label="placeholder image"></div>
           <h1>On a Cascades peak, a lookout eyes a fiery future</h1>
@@ -167,6 +171,7 @@
     </div>
   </section>
 
+
   <!-- # Latest Features from Apps on Google Play Store -->
   <section class="hscroll" aria-label="Featured">
     <h2 class="hscroll-title">Latest Features</h2>
@@ -275,6 +280,7 @@
 
       <!-- # Main Section -->
       <div class="main">
+        <h4>🤖 Android</h4>
         <article class="hero" aria-label="Featured story">
           <div class="hero-figure" role="img" aria-label="placeholder image"></div>
           <h1>On a Cascades peak, a lookout eyes a fiery future</h1>
@@ -423,6 +429,7 @@
 
       <!-- # Main Section -->
       <div class="main">
+        <h4>🤖 Android</h4>
         <article class="hero" aria-label="Featured story">
           <div class="hero-figure" role="img" aria-label="placeholder image"></div>
           <h1>On a Cascades peak, a lookout eyes a fiery future</h1>
@@ -599,15 +606,15 @@ body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helve
 .hero .dek { color: #ff0000; font-size: 15px; }
 .articles { padding: 12px; display: grid; gap: 16px; }
 .article h4 { margin: 0 0 4px; font: 700 17px/1.25 Georgia, "Times New Roman", Times, serif; }
-.article p { margin: 0; color: #ffffff; font-size: 15px; }
+.article p { margin: 0; color: #333; font-size: 15px; }
 
 .section h3 { margin: 0 0 8px; font: 700 14px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;  }
 .list .item a { font-weight: 600; text-decoration: none; }
-.meta { color: #ffffff; font-size: 12px; margin-top: 2px; }
+.meta { color: #666; font-size: 12px; margin-top: 2px; }
 .hero h1 { margin: 10px 0 6px; font-family: Georgia, "Times New Roman", Times, serif; font-size: clamp(22px, 4.2vw, 36px); line-height: 1.12; }
-.hero .dek { color: #ffffff; font-size: 15px; }
+.hero .dek { color: #333; font-size: 15px; }
 .article h4 { margin: 0 0 4px; font: 700 17px/1.25 Georgia, "Times New Roman", Times, serif; }
-.article p { margin: 0; color: #ffffff; font-size: 15px; }
+.article p { margin: 0; color: #333; font-size: 15px; }
 /* === Added: Horizontally scrollable news strip === */
 .hscroll { margin-top: 24px; margin-bottom: 36px;}
 .hscroll-title { margin: 0 0 8px; font: 700 20px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; letter-spacing: .2px; padding: 0 4px; text-align: start; justify-content: start; }

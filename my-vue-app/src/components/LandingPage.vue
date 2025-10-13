@@ -21,20 +21,32 @@ const markdownHtml = marked(markdown)
 </script>
 
 <template>
+  <h1>👋</h1>
   <p><i>Native Android iOS Engineer</i></p>
-  <h1>👋 Ethan Mofokeng 💻</h1>
+  <h1>Ethan Mofokeng</h1>
+
   <div class="button-row">
-    <a href="https://www.linkedin.com/in/mofokengethan" class="btn">LinkedIn</a>
-    <a class="btn">🔭</a>
-    <RouterLink to="/android" class="btn">Android</RouterLink>
-    <RouterLink to="/ios" class="btn">iOS</RouterLink>
-    <RouterLink to="/web" class="btn">Web</RouterLink>
+    <a href="https://www.linkedin.com/in/mofokengethan" class="btn">🤺 LinkedIn</a>
+    <RouterLink to="/android" class="btn">🤖 Android</RouterLink>
+    <RouterLink to="/ios" class="btn">🍎 iOS</RouterLink>
+    <RouterLink to="/web" class="btn">🕸️ Web</RouterLink>
+    <RouterLink to="/cloud" class="btn">☁️ Cloud</RouterLink>
   </div>
+
   <p><b>Mobile Software Engineer II</b> @ Excellus BCBS, 2024</p>
   <p><b>Mobile Software Engineer I</b> @ Excellus BCBS, 2023</p>
   <p><b>Software Development, M.Sc.</b> @ University of Strathclyde, 2021</p>
   <p><b>IT Data Management, B.Sc. </b> @ Colorado Technical University, 2017</p>
   <p><b>Religious Affair Specialist (56M)</b> @ Army, 2016</p>
+
+  <div class="button-row">
+    <RouterLink to="/departure" class="btn">🛩️ Departures</RouterLink>
+    <RouterLink to="/blog" class="btn">💻 Blog</RouterLink>
+    <RouterLink to="/reviews" class="btn">🗞️ Reviews</RouterLink>
+    <RouterLink to="/research" class="btn">🔭 Research</RouterLink>
+    <RouterLink to="/apis" class="btn">🔌 APIs</RouterLink>
+    <RouterLink to="/languages" class="btn">🧠 Languages</RouterLink>
+  </div>
 
   <!-- Published Section -->
   <br>
@@ -61,6 +73,9 @@ const markdownHtml = marked(markdown)
   <p>🇳🇱 Dutch - B2</p>
   <p>🇫🇷 French - B2</p>
   <p>🇩🇪 German - B2</p>
+  <p>🇮🇹 Italy - B2</p>
+  <p>🇳🇴 Norwegian - B2</p>
+  <p>🇸🇪 Swedish - B2</p>
 
   <!-- Languages, Frameworks and Tools Section -->
   <br>
