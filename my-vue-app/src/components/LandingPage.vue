@@ -29,8 +29,9 @@ const markdownHtml = marked(markdown)
     <a href="https://www.linkedin.com/in/mofokengethan" class="btn">🤺 LinkedIn</a>
     <RouterLink to="/android" class="btn">🤖 Android</RouterLink>
     <RouterLink to="/ios" class="btn">🍎 iOS</RouterLink>
-    <RouterLink to="/web" class="btn">🕸️ Web</RouterLink>
+    <RouterLink to="/apis" class="btn">🔌 APIs</RouterLink>
     <RouterLink to="/cloud" class="btn">☁️ Cloud</RouterLink>
+    <RouterLink to="/web" class="btn">🕸️ Web</RouterLink>
   </div>
 
   <p><b>Mobile Software Engineer II</b> @ Excellus BCBS, 2024</p>
@@ -42,9 +43,8 @@ const markdownHtml = marked(markdown)
   <div class="button-row">
     <RouterLink to="/departure" class="btn">🛩️ Departures</RouterLink>
     <RouterLink to="/blog" class="btn">💻 Blog</RouterLink>
-    <RouterLink to="/reviews" class="btn">🗞️ Reviews</RouterLink>
+    <RouterLink to="/news" class="btn">🗞️ News</RouterLink>
     <RouterLink to="/research" class="btn">🔭 Research</RouterLink>
-    <RouterLink to="/apis" class="btn">🔌 APIs</RouterLink>
     <RouterLink to="/languages" class="btn">🧠 Languages</RouterLink>
   </div>
 

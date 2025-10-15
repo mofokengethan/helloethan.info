@@ -1,13 +1,11 @@
 <script setup>
 
+import Header from "../sections/Header.vue";
 </script>
 
 <template>
-  <div class="small-button-row">
-    <RouterLink to="/" class="btn">🏡 Home</RouterLink>
-    <RouterLink to="" class="btn">🧠 Languages</RouterLink>
-  </div>
-  <h1>Languages</h1>
+  <Header header-type="art" />
+
   <div class="split-container">
     <div class="right-section">
       <h2>🇫🇷 Learning French</h2>

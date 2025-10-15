@@ -1,25 +1,10 @@
 <script setup>
 
+import Header from "../sections/Header.vue";
 </script>
 
 <template>
-  <div class="small-button-row">
-    <RouterLink to="/" class="btn">🏡 Home</RouterLink>
-    <RouterLink to="" class="btn">🕸️ Web</RouterLink>
-  </div>
-  <h1>Web</h1>
-  <div class="button-row">
-    <a href="https://www.linkedin.com/in/mofokengethan" class="btn">🤺 LinkedIn</a>
-    <RouterLink to="/android" class="btn">🤖 Android</RouterLink>
-    <RouterLink to="/ios" class="btn">🍎 iOS</RouterLink>
-    <RouterLink to="/apis" class="btn">🔌 APIs</RouterLink>
-    <RouterLink to="/cloud" class="btn">☁️ Cloud</RouterLink>
-    <RouterLink to="/blog" class="btn">💻 Blog</RouterLink>
-    <RouterLink to="/reviews" class="btn">🗞️ Reviews</RouterLink>
-    <RouterLink to="/research" class="btn">🔭 Research</RouterLink>
-    <RouterLink to="/departure" class="btn">🛩️ Departure</RouterLink>
-    <RouterLink to="/languages" class="btn">🧠 Languages</RouterLink>
-  </div>
+  <Header header-type="dev" />
 
   <!-- # UI + Main Section -->
   <div class="container">
@@ -42,7 +27,6 @@
 
       <!-- # Main Section -->
       <div class="main">
-        <h4>🤖 Android</h4>
         <article class="hero" aria-label="Featured story">
           <div class="hero-figure" role="img" aria-label="placeholder image"></div>
           <h1>On a Cascades peak, a lookout eyes a fiery future</h1>

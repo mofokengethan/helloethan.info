@@ -1,25 +1,10 @@
 <script setup>
 
+import Header from "../sections/Header.vue";
 </script>
 
 <template>
-  <div class="small-button-row">
-    <RouterLink to="" class="btn"><h4>APIs</h4></RouterLink>
-    <RouterLink to="/" class="btn">🏡 Home</RouterLink>
-  </div>
-  <h1>Ethan Mofokeng</h1>
-  <div class="button-row">
-    <a href="https://www.linkedin.com/in/mofokengethan" class="btn">🤺 LinkedIn</a>
-    <RouterLink to="/android" class="btn">🤖 Android</RouterLink>
-    <RouterLink to="/ios" class="btn">🍎 iOS</RouterLink>
-    <RouterLink to="/cloud" class="btn">☁️ Cloud</RouterLink>
-    <RouterLink to="/blog" class="btn">💻 Blog</RouterLink>
-    <RouterLink to="/reviews" class="btn">🗞️ Reviews</RouterLink>
-    <RouterLink to="/research" class="btn">🔭 Research</RouterLink>
-    <RouterLink to="/web" class="btn">🕸️ Web</RouterLink>
-    <RouterLink to="/departure" class="btn">🛩️ Departure</RouterLink>
-    <RouterLink to="/languages" class="btn">🧠 Languages</RouterLink>
-  </div>
+  <Header header-type="dev" />
 
   <!-- Added: horizontally scrollable news section -->
   <section class="hscroll" aria-label="Featured">
@@ -66,7 +51,6 @@
         </div>
       </article>
     </div>
-
   </section>
 
 </template>

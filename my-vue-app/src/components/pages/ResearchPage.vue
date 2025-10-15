@@ -1,25 +1,11 @@
 <script setup>
 
+import Header from "../sections/Header.vue";
 </script>
 
 <template>
-  <div class="small-button-row">
-    <RouterLink to="/" class="btn">🏡 Home</RouterLink>
-    <RouterLink to="" class="btn">🔭 Research</RouterLink>
-  </div>
-  <h1>Research</h1>
-  <div class="button-row">
-    <a href="https://www.linkedin.com/in/mofokengethan" class="btn">🤺 LinkedIn</a>
-    <RouterLink to="/android" class="btn">🤖 Android</RouterLink>
-    <RouterLink to="/ios" class="btn">🍎 iOS</RouterLink>
-    <RouterLink to="/apis" class="btn">🔌 APIs</RouterLink>
-    <RouterLink to="/cloud" class="btn">☁️ Cloud</RouterLink>
-    <RouterLink to="/blog" class="btn">💻 Blog</RouterLink>
-    <RouterLink to="/reviews" class="btn">🗞️ Reviews</RouterLink>
-    <RouterLink to="/web" class="btn">🕸️ Web</RouterLink>
-    <RouterLink to="/departure" class="btn">🛩️ Departure</RouterLink>
-    <RouterLink to="/languages" class="btn">🧠 Languages</RouterLink>
-  </div>
+  <Header header-type="art" />
+
   <section class="research-shell" aria-label="Research Mode">
     <div class="research-grid">
       <!-- Document Viewer -->

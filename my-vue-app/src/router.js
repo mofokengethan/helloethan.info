@@ -19,7 +19,7 @@ const routes = [
     { path: '/apis', component: APIPage },
     { path: '/cloud', component: CloudPage },
     { path: '/blog', component: BlogPage },
-    { path: '/reviews', component: ReviewsPage },
+    { path: '/news', component: ReviewsPage },
     { path: '/research', component: ResearchPage },
     { path: '/web', component: WebPage },
     { path: '/departure', component: DeparturePage },
