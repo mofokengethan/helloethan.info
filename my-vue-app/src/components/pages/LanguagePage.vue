@@ -4,7 +4,7 @@ import Header from "../sections/Header.vue";
 </script>
 
 <template>
-  <Header header-type="art" />
+  <Header header-type="dev" />
 
   <div class="split-container">
     <div class="right-section">
@@ -245,36 +245,34 @@ import Header from "../sections/Header.vue";
   }
 
 .left-section {
-  background-color: #131313;
   border-radius: 20px;
-  color: white;
+  color: #000000;
   padding: 8px;
   margin: 4px;
 }
 
 .right-section {
-  background-color: #151515;
   border-radius: 20px;
-  color: white;
+  color: #000000;
   padding: 8px;
   margin: 4px;
 }
 
-.pink { background-color: rgba(253, 221, 230, 0.25); }
-.teal { background-color: rgba(215, 240, 239, 0.25); }
-.redis { background-color: rgba(240, 215, 215, 0.25); }
-.orange { background-color: rgba(255, 231, 194, 0.25); }
-.yellow { background-color: rgba(255, 240, 200, 0.25); }
-.gold { background-color: rgba(255, 226, 176, 0.25); }
-.green { background-color: rgba(229, 248, 210, 0.25); }
-.mint { background-color: rgba(214, 246, 220, 0.25); }
-.light-green { background-color: rgba(216, 248, 240, 0.25); }
-.blue { background-color: rgba(212, 243, 255, 0.25); }
-.gray-blue { background-color: rgba(227, 240, 247, 0.25); }
-.sky { background-color: rgba(220, 232, 255, 0.25); }
-.purple { background-color: rgba(228, 220, 255, 0.25); }
-.violet { background-color: rgba(235, 217, 245, 0.25); }
-.magenta { background-color: rgba(243, 215, 247, 0.25); }
-.steel { background-color: rgba(225, 232, 242, 0.25); }
-.olive { background-color: rgba(234, 242, 218, 0.25); }
+  .pink { background-color: rgba(253, 221, 230, 0.30); border: 3px solid rgb(253, 221, 230); }
+  .teal { background-color: rgba(215, 240, 239, 0.30); border: 3px solid rgb(215, 240, 239); }
+  .redis { background-color: rgba(240, 215, 215, 0.30); border: 3px solid rgb(240, 215, 215); }
+  .orange { background-color: rgba(255, 231, 194, 0.30); border: 3px solid rgb(255, 231, 194); }
+  .yellow { background-color: rgba(255, 240, 200, 0.30); border: 3px solid rgb(255, 240, 200); }
+  .gold { background-color: rgba(255, 226, 176, 0.30); border: 3px solid rgb(255, 226, 176); }
+  .green { background-color: rgba(229, 248, 210, 0.30); border: 3px solid rgb(229, 248, 210); }
+  .mint { background-color: rgba(214, 246, 220, 0.30); border: 3px solid rgb(214, 246, 220); }
+  .light-green { background-color: rgba(216, 248, 240, 0.30); border: 3px solid rgb(216, 248, 240); }
+  .blue { background-color: rgba(212, 243, 255, 0.30); border: 3px solid rgb(212, 243, 255); }
+  .gray-blue { background-color: rgba(227, 240, 247, 0.30); border: 3px solid rgb(227, 240, 247); }
+  .sky { background-color: rgba(220, 232, 255, 0.30); border: 3px solid rgb(220, 232, 255); }
+  .purple { background-color: rgba(228, 220, 255, 0.30); border: 3px solid rgb(228, 220, 255); }
+  .violet { background-color: rgba(235, 217, 245, 0.30); border: 3px solid rgb(235, 217, 245); }
+  .magenta { background-color: rgba(243, 215, 247, 0.30); border: 3px solid rgb(243, 215, 247); }
+  .steel { background-color: rgba(225, 232, 242, 0.30); border: 3px solid rgb(225, 232, 242); }
+  .olive { background-color: rgba(234, 242, 218, 0.30); border: 3px solid rgb(234, 242, 218); }
 </style>

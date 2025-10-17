@@ -6,11 +6,13 @@ import WebPage from "./components/pages/WebPage.vue";
 import IOSPage from "./components/pages/IOSPage.vue";
 import APIPage from "./components/pages/APIPage.vue";
 import BlogPage from "./components/pages/BlogPage.vue";
-import ReviewsPage from "./components/pages/ReviewsPage.vue";
 import ResearchPage from "./components/pages/ResearchPage.vue";
 import DeparturePage from "./components/pages/DeparturePage.vue";
 import CloudPage from "./components/pages/CloudPage.vue";
 import LanguagePage from "./components/pages/LanguagePage.vue";
+import ContentPage from "./components/pages/ContentPage.vue";
+import NewsPage from "./components/pages/NewsPage.vue";
+import ArabicaPage from "./components/pages/ArabicaPage.vue";
 
 const routes = [
     { path: '/', component: LandingPage },
@@ -19,11 +21,14 @@ const routes = [
     { path: '/apis', component: APIPage },
     { path: '/cloud', component: CloudPage },
     { path: '/blog', component: BlogPage },
-    { path: '/news', component: ReviewsPage },
+    { path: '/news', component: NewsPage },
     { path: '/research', component: ResearchPage },
     { path: '/web', component: WebPage },
     { path: '/departure', component: DeparturePage },
     { path: '/languages', component: LanguagePage },
+    { path: '/content', component: ContentPage },
+    { path: '/arabica', component: ArabicaPage },
+
 ]
 
 export const router = createRouter({

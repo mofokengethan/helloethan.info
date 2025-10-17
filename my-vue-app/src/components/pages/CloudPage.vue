@@ -1,59 +1,16 @@
 <script setup>
 
 import Header from "../sections/Header.vue";
+import CardCarousel from "../sections/CardCarousel.vue";
 </script>
 
 <template>
   <Header header-type="dev" />
 
   <!-- Added: horizontally scrollable news section -->
-  <section class="hscroll" aria-label="Featured">
-    <h2 class="hscroll-title">FEATURED</h2>
-    <div class="hrow">
-      <article class="card">
-        <div class="img" role="img" aria-label="placeholder image"></div>
-        <div class="body">
-          <h4 class="title"><a href="#">Ferry cuts ripple across islands</a></h4>
-          <p class="sum">What the seasonal schedule change means for commuters.</p>
-          <div class="meta">12m ago</div>
-        </div>
-      </article>
-      <article class="card">
-        <div class="img" role="img" aria-label="placeholder image"></div>
-        <div class="body">
-          <h4 class="title"><a href="#">UW unveils new AI research hub</a></h4>
-          <p class="sum">A public–private partnership aims to accelerate breakthroughs.</p>
-          <div class="meta">22m ago</div>
-        </div>
-      </article>
-      <article class="card">
-        <div class="img" role="img" aria-label="placeholder image"></div>
-        <div class="body">
-          <h4 class="title"><a href="#">Kraken trim roster ahead of opener</a></h4>
-          <p class="sum">Five prospects reassigned after pre-season finale.</p>
-          <div class="meta">35m ago</div>
-        </div>
-      </article>
-      <article class="card">
-        <div class="img" role="img" aria-label="placeholder image"></div>
-        <div class="body">
-          <h4 class="title"><a href="#">Light rail extension: what’s next</a></h4>
-          <p class="sum">Key stations and timelines for the north–south corridor.</p>
-          <div class="meta">48m ago</div>
-        </div>
-      </article>
-      <article class="card">
-        <div class="img" role="img" aria-label="placeholder image"></div>
-        <div class="body">
-          <h4 class="title"><a href="#">Downtown housing conversions grow</a></h4>
-          <p class="sum">Developers pitch new life for older office towers.</p>
-          <div class="meta">1h ago</div>
-        </div>
-      </article>
-    </div>
-
-  </section>
-
+  <CardCarousel title="Google Cloud Platform"/>
+  <CardCarousel title="AWS"/>
+  <CardCarousel title="Microsoft Azure"/>
 </template>
 
 <style scoped>

@@ -4,10 +4,10 @@ import Header from "../sections/Header.vue";
 </script>
 
 <template>
-  <Header header-type="art" />
+  <Header header-type="dev" />
 
   <section class="topics" aria-label="Topics">
-    <h2 class="topics-title">Topics</h2>
+    <h2 class="topics-title">Countries</h2>
     <ul class="topics-list">
       <li class="topics-item">
         <RouterLink to="/android" class="topics-link">
